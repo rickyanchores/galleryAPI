@@ -2,4 +2,14 @@ body {
   background: #333;
   color: whitesmoke;
   font-family: monospace;
+}
+
+.result {
+  background: teal;
+  margin: 1em;
+}
+
+.bigResult {
+  background: red;
+  margin: 1em;
 }/*# sourceMappingURL=styles.css.map */
