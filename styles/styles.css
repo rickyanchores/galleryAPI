@@ -5,11 +5,11 @@ body {
 }
 
 .result {
-  background: teal;
+  background: #333;
   margin: 1em;
 }
 
 .bigResult {
-  background: red;
+  background: rebeccapurple;
   margin: 1em;
 }/*# sourceMappingURL=styles.css.map */

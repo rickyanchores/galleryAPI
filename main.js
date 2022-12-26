@@ -24,7 +24,8 @@ async function getPhoto(searchName){
             let imagesArray = data.results ;
 
             imagesArray.forEach(image => {
-                pictures += `<img src="${image.urls.thumb}"/>`
+                pictures += `<img src="${image.urls.thumb}"/>
+                              <p>${image.description}</p>`
             });
 
             //Fetch big image
