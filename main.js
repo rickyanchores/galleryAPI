@@ -1,4 +1,5 @@
 let result = document.querySelector(".result")
+let rawResult = document.querySelector(".rawResult")
 let regularResult = document.querySelector(".regularResult")
 let bigResult = document.querySelector(".bigResult")
 let btn = document.querySelector(".btn")
@@ -7,6 +8,7 @@ let btn = document.querySelector(".btn")
 
 async function getPhoto(searchName){
     let pictures = ""
+    let rawPicture = ""
     let bigPictures = ""
     let regularPictures = ""
     //const ACCESS_KEY:  "DRyWQshwghkCo9Ls_D22kCtG0JYWnKgo3O-yElpbB38";
@@ -28,6 +30,16 @@ async function getPhoto(searchName){
                 pictures += `<img src="${image.urls.thumb}"/>
                               <p>${image.description}</p>`
             });
+
+
+            // Fetch Raw Result
+
+            let rawImageArray = data.results
+
+            rawImageArray.forEach(rawImage => {
+                rawPicture += `<img src="${rawImage.urls.raw}"/>
+                                <p>${rawImage.description}</p>`
+            })
 
 
             //FETCH Regular Size
@@ -54,6 +66,7 @@ async function getPhoto(searchName){
 
 
             result.innerHTML = pictures
+            rawResult.innerHTML = rawPicture
             regularResult.innerHTML = regularPictures
             bigResult.innerHTML = bigPictures
         })

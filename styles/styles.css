@@ -9,6 +9,10 @@ body {
   margin: 1em;
 }
 
+.rawResult {
+  background: royalblue;
+}
+
 .regularResult {
   background: pink;
 }
