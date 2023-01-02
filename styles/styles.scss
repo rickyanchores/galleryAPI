@@ -2,6 +2,9 @@ body{
     background: #333;
     color: whitesmoke;
     font-family: monospace;
+    img{
+        border-radius: 12px;
+    }
 }
 
 .result{
@@ -19,5 +22,4 @@ body{
 
 .bigResult{
     background: rebeccapurple;
-    margin: 1em;
 }
