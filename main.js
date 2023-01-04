@@ -28,7 +28,9 @@ async function getPhoto(searchName){
 
             imagesArray.forEach(image => {
                 pictures += `<img src="${image.urls.thumb}"/>
-                              <p>${image.description}</p>`
+                              <p>${image.description}</p>
+                              <p>Likes: ${image.likes}</p>`
+
             });
 
 
@@ -38,7 +40,8 @@ async function getPhoto(searchName){
 
             rawImageArray.forEach(rawImage => {
                 rawPicture += `<img src="${rawImage.urls.raw}"/>
-                                <p>${rawImage.description}</p>`
+                                <p>${rawImage.description}</p>
+                                <p>Likes: ${rawImage.likes}</p>`
             })
 
 
