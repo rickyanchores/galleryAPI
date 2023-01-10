@@ -1,5 +1,5 @@
 let result = document.querySelector(".result")
-
+let smallResult = document.querySelector(".smallResult")
 let bigResult = document.querySelector(".bigResult")
 let btn = document.querySelector(".btn")
 
@@ -7,7 +7,7 @@ let btn = document.querySelector(".btn")
 
 async function getPhoto(searchName){
     let pictures = ""
-    let rawPicture = ""
+    let smallPictures = ""
     let bigPictures = ""
     //const ACCESS_KEY:  "DRyWQshwghkCo9Ls_D22kCtG0JYWnKgo3O-yElpbB38";
     const unsplashEndpoint = `https://api.unsplash.com/search/photos?client_id=${"DRyWQshwghkCo9Ls_D22kCtG0JYWnKgo3O-yElpbB38"}&query=`;
@@ -21,7 +21,8 @@ async function getPhoto(searchName){
         .then((res) => res.json())
         .then((data) => {
             console.log(data)
-            //
+            
+            // Fetch result
             let imagesArray = data.results ;
 
             imagesArray.forEach(image => {
@@ -31,31 +32,15 @@ async function getPhoto(searchName){
 
             });
 
+            //Fetch small image
 
-            // Fetch Raw Result
+            let smallImagesArray = data.results
 
-            let rawImageArray = data.results
-
-            rawImageArray.forEach(rawImage => {
-                rawPicture += `<img src="${rawImage.urls.raw}"/>
-                                <p>${rawImage.description}</p>
-                                <p>Likes: ${rawImage.likes}</p>`
+                smallImagesArray.forEach(smallImage => {
+                    smallPictures += `<img src="${smallImage.urls.small}"/>
+                                        <p>${smallImage.description}</p>`
             })
-
-
-            //FETCH Regular Size
-
-            
-
-            let regularImageArray = data.results;
-
-            regularImageArray.forEach((regularImage) => {
-                regularPictures += `<img src="${regularImage.urls.regular}"/>`
-            })
-
-            
-
-
+       
 
             //Fetch big image
 
@@ -66,18 +51,10 @@ async function getPhoto(searchName){
                                         <p>${bigImage.description}</p>`
             })
 
-            //Fetch small image
-
-            let smallImagesArray = data.results
-
-            smallImagesArray.forEach(smallImage => {
-                smallPictures += `<img src="${smallImage.urls.small}"/>
-                                        <p>${smallImage.description}</p>`
-            })
-
+     
 
             result.innerHTML = pictures
-
+            smallResult.innerHTML = smallPictures;
             bigResult.innerHTML = bigPictures
         })
 }
