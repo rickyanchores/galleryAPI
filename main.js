@@ -1,5 +1,5 @@
 let result = document.querySelector(".result")
-let smallResult = document.querySelector(".smallResult")
+
 let bigResult = document.querySelector(".bigResult")
 let btn = document.querySelector(".btn")
 
@@ -7,8 +7,8 @@ let btn = document.querySelector(".btn")
 
 async function getPhoto(searchName){
     let pictures = ""
+    let rawPicture = ""
     let bigPictures = ""
-    let smallPictures =""
     //const ACCESS_KEY:  "DRyWQshwghkCo9Ls_D22kCtG0JYWnKgo3O-yElpbB38";
     const unsplashEndpoint = `https://api.unsplash.com/search/photos?client_id=${"DRyWQshwghkCo9Ls_D22kCtG0JYWnKgo3O-yElpbB38"}&query=`;
 
@@ -26,8 +26,36 @@ async function getPhoto(searchName){
 
             imagesArray.forEach(image => {
                 pictures += `<img src="${image.urls.thumb}"/>
-                              <p>${image.description}</p>`
+                              <p>${image.description}</p>
+                              <p>Likes: ${image.likes}</p>`
+
             });
+
+
+            // Fetch Raw Result
+
+            let rawImageArray = data.results
+
+            rawImageArray.forEach(rawImage => {
+                rawPicture += `<img src="${rawImage.urls.raw}"/>
+                                <p>${rawImage.description}</p>
+                                <p>Likes: ${rawImage.likes}</p>`
+            })
+
+
+            //FETCH Regular Size
+
+            
+
+            let regularImageArray = data.results;
+
+            regularImageArray.forEach((regularImage) => {
+                regularPictures += `<img src="${regularImage.urls.regular}"/>`
+            })
+
+            
+
+
 
             //Fetch big image
 
@@ -49,7 +77,7 @@ async function getPhoto(searchName){
 
 
             result.innerHTML = pictures
-            smallResult.innerHTML = smallPictures
+
             bigResult.innerHTML = bigPictures
         })
 }

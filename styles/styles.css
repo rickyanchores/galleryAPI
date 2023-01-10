@@ -3,18 +3,23 @@ body {
   color: whitesmoke;
   font-family: monospace;
 }
+body img {
+  border-radius: 12px;
+}
 
 .result {
   background: #333;
   margin: 1em;
 }
 
-.smallResult {
+.rawResult {
+  background: royalblue;
+}
+
+.regularResult {
   background: pink;
-  margin: 1em;
 }
 
 .bigResult {
   background: rebeccapurple;
-  margin: 1em;
 }/*# sourceMappingURL=styles.css.map */
