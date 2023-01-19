@@ -29,8 +29,8 @@ async function getPhoto(searchName){
                 pictures += `<img src="${image.urls.thumb}"/>
                               <p>${image.description}</p>
                               <p>Likes: ${image.likes}</p>
-                              <p>${image.user.first_name}</p>`
-
+                              <p>${image.user.first_name}</p>
+                              <p>${image.user.last_name}</p>`
             });
 
             //Fetch small image
