@@ -30,7 +30,8 @@ async function getPhoto(searchName){
                               <p>${image.description}</p>
                               <p>Likes: ${image.likes}</p>
                               <p>${image.user.first_name}</p>
-                              <p>${image.user.last_name}</p>`
+                              <p>${image.user.last_name}</p>
+                              <button href="${image.links.download}">Download</button>`
             });
 
             //Fetch small image
