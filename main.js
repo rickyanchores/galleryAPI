@@ -31,6 +31,7 @@ async function getPhoto(searchName){
                               <p>Likes: ${image.likes}</p>
                               <p>${image.user.first_name}</p>
                               <p>${image.user.last_name}</p>
+                              <p>${image.user.location}</p>
                               <button href="${image.links.download}">Download</button>`
             });
 
@@ -54,7 +55,7 @@ async function getPhoto(searchName){
             })
 
      
-
+            // to RENDER
             result.innerHTML = pictures
             smallResult.innerHTML = smallPictures;
             bigResult.innerHTML = bigPictures
