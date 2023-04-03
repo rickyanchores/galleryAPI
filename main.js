@@ -11,11 +11,8 @@ async function getPhoto(searchName){
     let bigPictures = ""
     //const ACCESS_KEY:  "DRyWQshwghkCo9Ls_D22kCtG0JYWnKgo3O-yElpbB38";
     const unsplashEndpoint = `https://api.unsplash.com/search/photos?client_id=${"DRyWQshwghkCo9Ls_D22kCtG0JYWnKgo3O-yElpbB38"}&query=`;
-
   
     const response = fetch(unsplashEndpoint + searchName)
-
-    
 
     response
         .then((res) => res.json())
@@ -44,7 +41,6 @@ async function getPhoto(searchName){
                                         <p>${smallImage.description}</p>`
             })
        
-
             //Fetch big image
 
             let bigImagesArray = data.results;
@@ -54,7 +50,6 @@ async function getPhoto(searchName){
                                         <p>${bigImage.description}</p>`
             })
 
-     
             // to RENDER
             result.innerHTML = pictures
             smallResult.innerHTML = smallPictures;
