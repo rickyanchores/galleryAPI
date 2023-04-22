@@ -26,8 +26,6 @@ async function getPhoto(searchName){
                 <p>${image.user.first_name}</p>
                 <p>${image.user.last_name}</p>
                 <p>${image.user.location}</p>
-                <button href="${image.links.download}">Download</button>
-                
                             </div>
 `
             });
