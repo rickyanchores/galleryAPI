@@ -17,27 +17,27 @@ button {
   color: whitesmoke;
   padding: 1em;
   margin: 1em;
+  cursor: pointer;
 }
 
 .result {
-  border: 5px solid #333;
   border-radius: 12px;
   margin: 1em;
   padding: 1em;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
 }
 .result .picture-container {
-  width: 80%;
+  width: 450px;
   background: #333;
   padding: 1em;
   margin: 1em;
   border-radius: 12px;
 }
 .result .picture-container img {
-  width: 80%;
+  width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
   border-radius: 12px;
