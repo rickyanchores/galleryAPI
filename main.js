@@ -19,7 +19,7 @@ async function getPhoto(searchName){
             let imagesArray = data.results ;
 
             imagesArray.forEach(image => {
-                pictures += `<div class="picture-container">
+                pictures += `<div data-aos="fade-left" class="picture-container">
                 <img src="${image.urls.raw}"/>
                 <p>${image.description}</p>
                 <p>Likes: ${image.likes}</p>
