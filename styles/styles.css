@@ -28,6 +28,7 @@ button {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  transition: 0.5s ease-in-out;
 }
 .result .picture-container {
   width: 450px;
